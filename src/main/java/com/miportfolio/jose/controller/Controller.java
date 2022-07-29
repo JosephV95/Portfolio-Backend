@@ -27,8 +27,7 @@ public class Controller {
     @PostMapping("/personas/crear")
     public void agregarPersona (@RequestBody Persona pers){
         persoServ.crearPersona(pers);
-        System.out.println("La persona se agrego correctamente");
-        
+        System.out.println("La persona se agrego correctamente");     
     }
     
     @GetMapping("/personas/ver")

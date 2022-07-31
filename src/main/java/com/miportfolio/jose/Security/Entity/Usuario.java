@@ -1,6 +1,5 @@
 package com.miportfolio.jose.Security.Entity;
 
-import com.sun.istack.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -12,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.validation.constraints.NotNull;    //cambie la libreria de importacion del Notnull
 
 @Entity
 public class Usuario {
@@ -29,8 +29,8 @@ public class Usuario {
     private String password;
     
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name ="usuario_rol", joinColumns = @JoinColumn(name ="usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
-     private Set<Rol> roles = new HashSet<>();
+    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name ="usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
+    private Set<Rol> roles = new HashSet<>();
 
     //Constructor
     public Usuario() {

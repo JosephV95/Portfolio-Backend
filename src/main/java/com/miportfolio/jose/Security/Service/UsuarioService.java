@@ -17,10 +17,10 @@ public class UsuarioService {
         return iUsuarioRepository.findByNombreUsuario(nombreUsuario) ;
     }
     
-    public boolean existisByNombreUsuario( String nombreUsuario) {
+    public boolean existsByNombreUsuario( String nombreUsuario) {
         return iUsuarioRepository.existsByNombreUsuario(nombreUsuario) ;
     }
-    public boolean existisByEmail( String email) {
+    public boolean existsByEmail( String email) {
         return iUsuarioRepository.existsByEmail(email) ;
     }
     public void save(Usuario usuario) {

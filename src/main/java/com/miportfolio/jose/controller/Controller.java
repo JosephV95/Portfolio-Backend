@@ -4,6 +4,7 @@ import com.miportfolio.jose.model.Persona;
 import com.miportfolio.jose.service.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,7 +23,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
     
     @Autowired
-    private IPersonaService persoServ ;
+    public IPersonaService persoServ ;
+    
     
     @PostMapping("/personas/crear")
     public void agregarPersona (@RequestBody Persona pers){
@@ -36,6 +38,7 @@ public class Controller {
     return persoServ.verPersonas();
     }
     
+    
     @DeleteMapping ("/personas/borrar/{id}")
     public String borrarPersona (@PathVariable Long id){
         persoServ.borrarPersona(id);
@@ -43,6 +46,7 @@ public class Controller {
     }
     
     //Para editar una persona//
+    
     @PutMapping ("/personas/editar/{id}")
     public Persona editarPersona (@PathVariable Long id,
                                                   @RequestParam("nombre") String nuevoNombre,

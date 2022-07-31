@@ -2,7 +2,7 @@ package com.miportfolio.jose.Security.Controller;
 
 
 public class Mensaje {
-    private  String mensaje;
+    private String mensaje;
 
     public Mensaje() {
     }

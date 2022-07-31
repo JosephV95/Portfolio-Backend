@@ -1,4 +1,4 @@
-/* Esta Clase es la que genera el token y tienen metodos para ver si esta bien armado el mismo */
+//* Esta Clase es la que genera el token y tienen metodos para ver si esta bien armado el mismo */
 package com.miportfolio.jose.Security.jwt;
 
 import com.miportfolio.jose.Security.Entity.UsuarioPrincipal;

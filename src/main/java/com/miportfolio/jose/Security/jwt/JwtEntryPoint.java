@@ -1,4 +1,4 @@
-//Esta clase va a chequear si hay un token valido
+
 package com.miportfolio.jose.Security.jwt;
 
 import java.io.IOException;
@@ -11,13 +11,14 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 
-@Component
+
+@Component              //Esta clase va a chequear si hay un token valido//
 public class JwtEntryPoint  implements AuthenticationEntryPoint{
     private final static Logger logger = LoggerFactory.getLogger(JwtEntryPoint.class);
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
-        logger.error("Fallo el metodo comments ") ;
+        logger.error("Falló el metodo commence ") ;
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
     }
     

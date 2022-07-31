@@ -1,21 +1,20 @@
 package com.miportfolio.jose.Security.Entity;
 
 import com.miportfolio.jose.Security.Enums.RolNombre;
+import com.sun.istack.NotNull;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Rol {
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @NotBlank
+    @NotNull        //los cambie a not null pero habia puesto NotBlank
     @Enumerated(EnumType.STRING)   //Esto define que el tipo de dato que debe ingresar sea string
     private RolNombre rolNombre;
 

@@ -13,7 +13,7 @@ public class EducacionService implements IEducacionService{
     public EducacionRepository eduRepo;
 
     @Override
-    public List<Educacion> verEducacion() {
+    public List<Educacion> verEducaciones() {
         return eduRepo.findAll();
     }
 
@@ -23,14 +23,18 @@ public class EducacionService implements IEducacionService{
     }
 
     @Override
-    public void borrarEducacion(Long id) {
+    public void borrarEducacion(int id) {
         eduRepo.deleteById(id);
     }
 
     @Override
-    public Educacion buscarEducacion(Long id) {
-       return eduRepo.findById(id).orElse(null);
+    public Educacion buscarEducacion(int id) {
+        return eduRepo.findById(id);
     }
 
-    
+    @Override
+    public Educacion edit(Educacion exp) {
+        return eduRepo.save(exp);
+    }
+
 }

@@ -6,13 +6,11 @@ import java.util.List;
 
 public interface IEducacionService {
     
-    public List <Educacion> verEducacion ();
-    
+    public List <Educacion> verEducaciones ();
     public void crearEducacion (Educacion edu);
-    
-    public void borrarEducacion (Long id);
-    
-    public Educacion buscarEducacion (Long id);
-    
+    public void borrarEducacion (int id);
+    public Educacion buscarEducacion (int id);
+    Educacion edit(Educacion exp);
+
     
 }

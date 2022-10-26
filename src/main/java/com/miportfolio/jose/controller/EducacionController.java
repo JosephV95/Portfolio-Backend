@@ -24,7 +24,7 @@ public class EducacionController {
     @Autowired
     IEducacionService eduServ;
     
-     @GetMapping
+    @GetMapping
     public List<Educacion>listar(){
         return eduServ.verEducaciones();
     }

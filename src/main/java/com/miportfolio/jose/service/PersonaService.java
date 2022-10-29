@@ -11,26 +11,33 @@ public class PersonaService implements IPersonaService {
 
     @Autowired
     public PersonaRepository persoRepo;
-    
+
     @Override
-    public List<Persona> verPersonas() {
+    public List<Persona> verPersona() {
         return persoRepo.findAll();
     }
 
     @Override
     public void crearPersona(Persona per) {
-        persoRepo.save(per) ;
-        
+        persoRepo.save(per);
     }
 
     @Override
-    public void borrarPersona(Long id) {
+    public void borrarPersona(int id) {
         persoRepo.deleteById(id);
     }
 
     @Override
-    public Persona buscarPersona(Long id) {
-        return persoRepo.findById(id).orElse(null);     
+    public Persona buscarPersona(int id) {
+        return persoRepo.findById(id);
+    }
+
+    @Override
+    public Persona edit(Persona per) {
+        return persoRepo.save(per);
     }
     
+
+
+ 
 }

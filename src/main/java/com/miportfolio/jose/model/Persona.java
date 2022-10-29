@@ -1,10 +1,10 @@
 package com.miportfolio.jose.model;
 
-import com.sun.istack.NotNull;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,28 +14,31 @@ public class Persona {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     
-    @NotNull
+    @NotBlank
     private String nombre;
-    @NotNull
+    @NotBlank
     private String apellido;
-    private String email;
-    private String foto_url;
-    private String sobre_mi;
     private String titulo;
+    private String foto_url;
+    private String fondo_url;
+    private String sobre_mi;
+    
 
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String email, String foto_url, String sobre_mi, String titulo) {
+    public Persona(String nombre, String apellido, String titulo, String foto_url, String fondo_url, String sobre_mi) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.email = email;
-        this.foto_url = foto_url;
-        this.sobre_mi = sobre_mi;
         this.titulo = titulo;
+        this.foto_url = foto_url;
+        this.fondo_url = fondo_url;
+        this.sobre_mi = sobre_mi;
     }
+
+    
    
     
     

@@ -1,8 +1,8 @@
 
 package com.miportfolio.jose.controller;
 
-import com.miportfolio.jose.model.SkillFront;
-import com.miportfolio.jose.service.ISkillFrontService;
+import com.miportfolio.jose.model.SkillSoft;
+import com.miportfolio.jose.service.ISkillSoftService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,39 +18,36 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping({"/skill-front/"})
-public class SkillFrontController {
+@RequestMapping({"/skill-soft/"})
+public class SkillSoftController {
     
     @Autowired
-    ISkillFrontService sfServ;
+    ISkillSoftService ssServ;
     
     @GetMapping
-    public List<SkillFront>listar(){
-        return sfServ.verSkillsFront();
+    public List<SkillSoft>listar(){
+        return ssServ.verSkillsSoft();
     }
     
     @PostMapping
-    public void agregarSkillFront(@RequestBody SkillFront sf) {
-        sfServ.crearSkillFront(sf);
+    public void agregarSkillSoft(@RequestBody SkillSoft ss) {
+        ssServ.crearSkillSoft(ss);
         System.out.println("La Skill se agrego correctamente"); 
     }
-    @GetMapping("sf-edit/{id}")
-    public ResponseEntity<SkillFront> buscarSkillFront(@PathVariable int id) {
-        SkillFront skillFront = sfServ.buscarSkillFrontId(id);
-        return ResponseEntity.ok(skillFront);
+    @GetMapping("ss-edit/{id}")
+    public ResponseEntity<SkillSoft> buscarSkillSoft(@PathVariable int id) {
+        SkillSoft skillSoft = ssServ.buscarSkillSoftId(id);
+        return ResponseEntity.ok(skillSoft);
     }
-    @PutMapping("sf-edit/{id}")
-    public SkillFront editarSkillFront(@PathVariable int id, @RequestBody SkillFront sf){
-        sf.setId(id);
+    @PutMapping("ss-edit/{id}")
+    public SkillSoft editarSkillBack(@PathVariable int id, @RequestBody SkillSoft ss){
+        ss.setId(id);
         System.out.println("Se actualizo la skill");
-        return sfServ.edit(sf);
+        return ssServ.edit(ss);
     }
-    
     @DeleteMapping("delete/{id}")
-    public void borrarSkillFront(@PathVariable int id){
-        sfServ.borrarSkillFront(id);
+    public void borrarSkillSoft(@PathVariable int id){
+        ssServ.borrarSkillSoft(id);
         System.out.println("Se borro la skill");
     }
-    
-    
 }

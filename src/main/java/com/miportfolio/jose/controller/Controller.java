@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://josevilteportfolio.web.app")
 //con el corsoring evito el error CORS policy y permite que el localhost:4200 llame al :8080 de tomcat(NetBeans)
 @RequestMapping({"/personas/"})
 
